@@ -27,3 +27,18 @@ html {
     background: linear-gradient(180deg, rgba(7,8,55,1) 0%, rgba(89,48,99,1) 100%) no-repeat fixed;
     background-size: cover;
 }
+
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    p {
+        font-size: 24px;
+    }
+
+    body {
+        width: 90%;
+        margin: auto;
+    }
+}
