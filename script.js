@@ -1,8 +1,7 @@
 let mobileMenuOpen = false;
 
-// function for the import property
 function importHtml() {
-  var z, i, element, file, xhttp;
+  var z, i, element, file;
 
   z = document.getElementsByTagName("*");
 
@@ -10,14 +9,15 @@ function importHtml() {
     element = z[i];
     file = element.getAttribute("import");
     if (file) {
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState === 4) {
-          if (this.status === 200) {
-            element.innerHTML = this.responseText;
-          } else if (this.status === 404) {
-            element.innerHTML = "Error 404";
+      fetch(file)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
           }
+          return response.text();
+        })
+        .then(data => {
+          element.innerHTML = data;
           element.removeAttribute("import");
 
           var importStartFunction = element.getAttribute("import-start");
@@ -26,10 +26,12 @@ function importHtml() {
           }
 
           importHtml();
-        }
-      }
-      xhttp.open("GET", file, true);
-      xhttp.send();
+        })
+        .catch(error => {
+          element.innerHTML = "Error 404";
+          element.removeAttribute("import");
+        });
+
       return;
     }
   }
