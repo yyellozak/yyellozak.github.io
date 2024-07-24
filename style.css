@@ -1,24 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Mono&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-h1, h2 {
-    font-family: "PT Mono", monospace;
-    color: #ffd201;
-}
-
-h1 {
-    font-size: 75px;
-}
-
-p {
-    font-size: 30px;
-}
-
 body {
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto; 
     color: white;
     font-family: "PT Sans", sans-serif;
+    margin: 0;
 }
 
 html {
@@ -28,17 +13,177 @@ html {
     background-size: cover;
 }
 
+h1, h2 {
+    font-family: "PT Mono", monospace;
+    color: #ffd201;
+}
+
+h1 {
+    font-size: 75px;
+}
+
+h2 {
+    font-size: 50px;
+}
+
+p, ul, .map {
+    font-size: 30px;
+}
+
+a {
+    color: #ffd201;
+}
+
+input {
+    font-size: 30px;
+    color: white;
+    background: transparent;
+    border: 1px solid #ffd201;
+    border-radius: 5px;
+    transition: 0.3s all ease;
+}
+
+input:focus {
+    font-size: 30px;
+    background: transparent;
+    border-radius: 5px;
+    outline: none;
+    padding: 5px 5px;
+}
+
+.nav {
+    /* glass effect */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background-color: #07083780;
+    /* end glass effect */
+    display: flex;
+    width: 100% !important;
+    margin: 0;
+    padding-top: 22.5px;
+    padding-bottom: 20px;
+    position: fixed;
+    top: 0;
+    border-bottom: 1px solid #ffd201;
+    height: 2em;
+    transition: 0.3s height ease;
+    overflow: hidden;
+}
+
+.nav.showing {
+    height: 9%;
+}
+
+.nav.mobilemenu-open {
+    height: 100%;
+}
+
+.nav-content {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-buttons {
+    margin-bottom: 10px;
+}
+
+.nav-projects, .nav-resources {
+    display: flex;
+    visibility: hidden;
+    height: 0;
+    opacity: 0;
+    transition: 0.3s opacity ease, 0.3s visibility ease, 0.3s height ease;
+}
+
+.nav-projects.showing, .nav-resources.showing {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+}
+
+.nav a, button {
+    padding: 5px 5px 5px 5px;
+    display: inline;
+    font-size: x-large;
+    font-family: 'PT Mono', sans-serif;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s all ease;
+    margin-left: 20px;
+}
+
+.nav button {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.nav-mobilemenu-button {
+    display: none;
+}
+
+.nav-mobilemenu-br {
+    display: none;
+    margin: 15px 0;
+}
+
+.nav a:hover, button:hover {
+    color: #070837 !important;
+    background-color: #ffd201;
+}
+
+.site-name, .nav-mobilemenu-button {
+    color: #ffd201 !important;
+    margin-left: 0px !important;
+}
+
+.site-name:hover {
+    color: #070837 !important;
+}
+
+.content {
+    width: 75%;
+    margin-top: 125px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @media only screen and (max-width: 768px) {
     h1 {
         font-size: 50px;
+    }
+
+    h2 {
+        font-size: 40px;
     }
 
     p {
         font-size: 24px;
     }
 
-    body {
+    content {
         width: 90%;
         margin: auto;
+    }
+
+    .nav-buttons {
+        display: none !important;
+    }
+
+    .nav-mobilemenu-button {
+        display: inline;
+    }
+
+    .nav-buttons.mobilemenu-open {
+        display: block !important;
+    }
+
+    .nav-mobilemenu-br {
+        display: block;
+    }
+
+    .nav-submenu {
+        display: none;
     }
 }

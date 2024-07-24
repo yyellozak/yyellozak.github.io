@@ -1,6 +1,7 @@
 # yyelloman.github.io
 My personal website
 
-Copyright (c) Isaac E., 2024
+If you want me to add something, post an issue.
 
---> see LICENSE for copyright information
+Copyright (c) Isaac E., 2024
+see LICENSE for copyright information
