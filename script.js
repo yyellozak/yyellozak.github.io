@@ -12,7 +12,7 @@ async function loadNav() {
     if (navElement) {
       navElement.offsetHeight;
 
-      navElement.classList.add('loaded');
+      navElement.classList.add('loaded'); 
       document.querySelector('.content').classList.add('nav-loaded');
 
       navElement.addEventListener('transitionend', () => {
