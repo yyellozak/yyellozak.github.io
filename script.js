@@ -11,7 +11,7 @@ async function loadNav() {
     const navElement = document.querySelector('.nav-all');
     if (navElement) {
       navElement.offsetHeight;
-
+ 
       navElement.classList.add('loaded'); 
       document.querySelector('.content').classList.add('nav-loaded');
 
