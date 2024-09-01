@@ -7,10 +7,14 @@
     </head>
     <body>
         <div class="content">
-            <h1>hello</h1>
-            <p>hi i am yello the person</p>
+            <h1 id="greetings">good morning</h1>
+            <p>hi i am yello the person. this is my website.</p>
             <h2>latest from <a href="/b">the <u>b</u>log</a></h2>
             <ul>
+                <li><p>
+                    <b>1 Sep 2024</b><br>
+                    merry Christmas (its Christmas season in the Philippines lol). also i just updated the website to fix some stuff and add some stuff
+                </p></li>
                 <li><p>
                     <b>31 Aug 2024</b><br>
                     new website design ig. this website is quite unfinished
@@ -18,5 +22,22 @@
             </ul>
         </div>
         <script defer src="/script.js"></script>
+        <script>
+            function updateHeader() {
+                const now = new Date();
+                const hours = now.getHours();
+                const header = document.getElementById('greetings');
+
+                if (hours < 12) {
+                    header.textContent = 'good morning';
+                } else if (hours < 18) {
+                    header.textContent = 'good afternoon';
+                } else {
+                    header.textContent = 'good evening';
+                }
+            }
+
+            window.onload = updateHeader;
+        </script>
     </body>
 </html>

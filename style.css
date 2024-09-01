@@ -74,18 +74,25 @@ p {
 .content {
     width: 75%;
     margin: auto;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(.05,.72,.62,.82);
+}
+
+.content.nav-loaded {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .nav {
-    position: fixed;
+    position: relative;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding: 30px;
+    padding-top: 40px;
     margin-top: 0;
     font-size: 35px;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     transform: translateY(-10%);
     border-bottom: 1px solid #d8d8d8;
 }
@@ -125,12 +132,19 @@ p {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    opacity: 0;
-    transform: translateY(-20px);
+    position: fixed;
+    width: 100%;
+    top: -20px;
+    z-index: 2;
+    
     transition: all 0.3s cubic-bezier(.05,.72,.62,.82);
 }
 
 .nav-all.loaded {
-    opacity: 1;
-    transform: translateY(0);
+    top: 0px !important;
+}
+
+.nav-all.loaded .nav {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
