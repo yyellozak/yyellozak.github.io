@@ -28,7 +28,9 @@
                 const hours = now.getHours();
                 const header = document.getElementById('greetings');
  
-                if (hours < 12) { 
+                if (hours < 4) {
+                    header.textContent = 'why are you up so late go to sleep';
+                } else if (hours < 12) { 
                     header.textContent = 'good morning';
                 } else if (hours < 18) {
                     header.textContent = 'good afternoon';
