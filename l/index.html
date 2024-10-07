@@ -6,13 +6,13 @@
         <link rel="stylesheet" href="/style.css" />
     </head>
     <body>
-        <div class="content">
-            <h1 id="greetings">good morning</h1>
-            <p>hi i am yello the person. this is my website.</p>
-            <h2>
-                latest from <a href="/l">the <span class="u">l</span>ogs</a>
-            </h2>
-            <div class="log-lists mono">
+        <div class="content mono">
+            <h1>
+                $ <span class="u">l</span>ogs<span class="u blinking"
+                    >&nbsp;</span
+                >
+            </h1>
+            <div class="log-lists">
                 <div class="log-list">
                     <ul>
                         <li>
@@ -35,24 +35,5 @@
             </div>
         </div>
         <script defer src="/script.js"></script>
-        <script>
-            function updateHeader() {
-                const now = new Date();
-                const hours = now.getHours();
-                const header = document.getElementById("greetings");
-
-                if (hours < 4) {
-                    header.textContent = "why are you up so late go to sleep";
-                } else if (hours < 12) {
-                    header.textContent = "good morning";
-                } else if (hours < 18) {
-                    header.textContent = "good afternoon";
-                } else {
-                    header.textContent = "good evening";
-                }
-            }
-
-            window.onload = updateHeader;
-        </script>
     </body>
 </html>

@@ -1,12 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 body {
     background-color: #1c1525;
-    font-family: "SUSE", sans-serif;
+    font-family: "IBM Plex Sans", sans-serif;
     color: #d8d8d8;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: #ffd201;
 }
 
@@ -26,6 +28,30 @@ p {
     font-size: 25px;
 }
 
+.u {
+    text-decoration: underline;
+}
+
+.mono {
+    font-family: "IBM Plex Mono", monospace;
+}
+
+.blinking {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        opacity: 1;
+        transition: 0.5s ease-in;
+    }
+    50% {
+        opacity: 0;
+        transition: 0.5s ease-out;
+    }
+}
+
 .content a {
     position: relative;
     display: inline-block;
@@ -33,7 +59,7 @@ p {
     border-radius: 10px;
     color: #ffd201;
     text-decoration: none;
-    transition: all 0.3s cubic-bezier(.05,.72,.62,.82);
+    transition: all 0.3s cubic-bezier(0.05, 0.72, 0.62, 0.82);
 }
 
 .content a::before {
@@ -68,15 +94,15 @@ p {
     opacity: 1;
     border-radius: 10px;
     background-color: #ffd201;
-    z-index: -1; 
-} 
+    z-index: -1;
+}
 
 .content {
     width: 75%;
     margin: auto;
     opacity: 0;
     transform: translateY(-10px);
-    transition: all 0.3s cubic-bezier(.05,.72,.62,.82);
+    transition: all 0.3s cubic-bezier(0.05, 0.72, 0.62, 0.82);
 }
 
 .content.nav-loaded {
@@ -99,28 +125,29 @@ p {
 
 .nav li {
     display: inline-block;
-    outline: 1px solid #d8d8d8;
+    outline: 2px solid #ffd20180;
     color: #d8d8d8;
-    border-radius: 10px;
-    outline-offset: 10px;
+    border-radius: 5px;
+    outline-offset: 8px;
     margin-left: 30px;
-    transition: all 0.3s cubic-bezier(.05,.72,.62,.82);
+    transition: all 0.3s cubic-bezier(0.05, 0.72, 0.62, 0.82);
 }
 
 .nav li:hover {
-    border-radius: 5px;
+    border-radius: 1px;
     outline-offset: 15px;
+    /*outline: 2px solid #d8d8d880;*/
     color: #ffd201;
 }
 
 .nav li a {
     color: #d8d8d8;
     text-decoration: none;
-    transition: color 0.3s cubic-bezier(.05,.72,.62,.82);
+    transition: color 0.3s cubic-bezier(0.05, 0.72, 0.62, 0.82);
 }
 
 .nav li a:hover {
-    color: #ffd201
+    color: #ffd201;
 }
 
 .nav #name {
@@ -136,8 +163,8 @@ p {
     width: 100%;
     top: -20px;
     z-index: 2;
-    
-    transition: all 0.3s cubic-bezier(.05,.72,.62,.82);
+
+    transition: all 0.3s cubic-bezier(0.05, 0.72, 0.62, 0.82);
 }
 
 .nav-all.loaded {
@@ -147,4 +174,44 @@ p {
 .nav-all.loaded .nav {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+}
+
+.input-number {
+    width: 50px;
+    font-size: 25px;
+    border-radius: 5px;
+    border: 2px solid #ffd201;
+    color: #ffd201;
+    background-color: transparent;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+button {
+    font-size: 25px;
+    border-radius: 5px;
+    border: 2px solid #ffd201;
+    color: #ffd201;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    border-radius: 5px;
+    color: #1c1525;
+    background-color: #ffd201;
+}
+
+.inline {
+    display: inline;
+}
+
+.log-lists {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }

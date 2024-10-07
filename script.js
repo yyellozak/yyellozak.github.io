@@ -10,9 +10,13 @@ async function loadNav() {
 
     const navElement = document.querySelector('.nav-all');
     if (navElement) {
-      navElement.offsetHeight;
+      if (!document.querySelector('.no-navbar-modal')) {
+        navElement.offsetHeight;
  
-      navElement.classList.add('loaded'); 
+        navElement.classList.add('loaded'); 
+      } else {
+        navElement.style.display = 'none';
+      }
       document.querySelector('.content').classList.add('nav-loaded');
 
       navElement.addEventListener('transitionend', () => {
@@ -25,7 +29,3 @@ async function loadNav() {
 }
 
 window.addEventListener('DOMContentLoaded', loadNav);
-
-function setTop(navElement) {
-  navElement.style.top = window.scrollY;
-}
