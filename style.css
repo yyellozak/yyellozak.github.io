@@ -16,6 +16,10 @@ h1 {
     font-size: 50px;
 }
 
+h1.blog-title {
+    margin: 0;
+}
+
 h2 {
     font-size: 35px;
 }
@@ -38,6 +42,18 @@ p {
 
 .blinking {
     animation: blink 1s infinite;
+}
+
+.centered {
+    text-align: center;
+}
+
+.sub {
+    font-size: 1.25em;
+    line-height: 0.6;
+    letter-spacing: 5px;
+    color: #d8d8d880;
+    text-transform: uppercase;
 }
 
 @keyframes blink {
@@ -101,13 +117,13 @@ p {
     width: 75%;
     margin: auto;
     opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s cubic-bezier(0.05, 0.72, 0.62, 0.82);
+    transform: translateY(0px);
+    transition: all 0.3s ease;
 }
 
 .content.nav-loaded {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(-15px);
 }
 
 .nav {
@@ -115,17 +131,24 @@ p {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding: 30px;
-    padding-top: 40px;
+    padding: 20px;
+    padding-top: 30px;
     margin-top: 0;
     font-size: 35px;
     transform: translateY(-10%);
     border-bottom: 1px solid #d8d8d8;
+    transition: all 0.3s ease;
+}
+
+.nav.shrink {
+    padding: 10px;
+    font-size: 25px;
+    transition: all 0.3s cubic-bezier(0.05, 0.72, 0.62, 0.82);
 }
 
 .nav li {
     display: inline-block;
-    outline: 2px solid #ffd20180;
+    outline: 2px solid #ffd20100;
     color: #d8d8d8;
     border-radius: 5px;
     outline-offset: 8px;
@@ -135,8 +158,8 @@ p {
 
 .nav li:hover {
     border-radius: 1px;
-    outline-offset: 15px;
-    /*outline: 2px solid #d8d8d880;*/
+    outline-offset: 10px;
+    outline: 2px solid #ffd20100;
     color: #ffd201;
 }
 
@@ -163,7 +186,6 @@ p {
     width: 100%;
     top: -20px;
     z-index: 2;
-
     transition: all 0.3s cubic-bezier(0.05, 0.72, 0.62, 0.82);
 }
 
@@ -174,6 +196,21 @@ p {
 .nav-all.loaded .nav {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+}
+
+.posts li {
+    display: block;
+    outline: 2px solid #ffd201;
+    outline-offset: 0px;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 30px;
+    transition: all 0.3s cubic-bezier(0.05, 0.72, 0.62, 0.82);
+}
+
+.posts li:hover {
+    outline-offset: 10px;
+    border-radius: 10px;
 }
 
 .input-number {

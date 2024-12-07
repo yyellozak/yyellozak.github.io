@@ -7,8 +7,13 @@
     </head>
     <body>
         <div class="content">
-            <h1>misc</h1>
-            <p><a href="/m/page-where-you-can-scroll.html">page where you can scroll</a></p>
+            <p class="centered sub">Blog post</p>
+            <h1 class="centered blog-title">31 Aug 24</h1>
+            <p class="centered sub">31 Aug 24</p>
+            <p>
+                new website design ig. this website is quite
+                unfinished
+            </p>
         </div>
         <script defer src="/script.js"></script>
     </body>

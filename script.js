@@ -12,8 +12,7 @@ async function loadNav() {
     if (navElement) {
       if (!document.querySelector('.no-navbar-modal')) {
         navElement.offsetHeight;
- 
-        navElement.classList.add('loaded'); 
+        navElement.classList.add('loaded');
       } else {
         navElement.style.display = 'none';
       }
@@ -23,6 +22,21 @@ async function loadNav() {
         navElement.classList.add('fixed');
       }, { once: true });
     }
+
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', function () {
+      const currentScroll = window.scrollY || document.documentElement.scrollTop;
+      const navbar = document.querySelector('.nav');
+
+      if (currentScroll > lastScrollTop) {
+        if (navbar) navbar.classList.add('shrink');
+      } else {
+        if (navbar) navbar.classList.remove('shrink');
+      }
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+
   } catch (error) {
     console.error('Failed to load nav.html:', error);
   }

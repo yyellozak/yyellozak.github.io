@@ -7,13 +7,18 @@
     </head>
     <body>
         <div class="content">
-            <h1 id="greetings">good morning</h1>
-            <p>hello i'm yello</p>
-            <h2>
-                latest from <a href="/b">the blog</a>
-            </h2>
+            <h1>
+                blog
+            </h1>
             <div class="posts">
                 <ul>
+                    <li>
+                        <p class="sub">8 Dec 24</p>
+                        <h2><a href="/b/posts/another-site-update.html">Another site update</a></h2>
+                        <p>
+                            Hi. I did another site update. ...
+                        </p>
+                    </li>
                     <li>
                         <p class="sub">1 Sep 24</p>
                         <h2><a href="/b/posts/1-sep-24.html">1 Sep 2024</a></h2>
@@ -35,24 +40,5 @@
             </div>
         </div>
         <script defer src="/script.js"></script>
-        <script>
-            function updateHeader() {
-                const now = new Date();
-                const hours = now.getHours();
-                const header = document.getElementById("greetings");
-
-                if (hours < 4) {
-                    header.textContent = "go to sleep";
-                } else if (hours < 12) {
-                    header.textContent = "good morning";
-                } else if (hours < 18) {
-                    header.textContent = "good afternoon";
-                } else {
-                    header.textContent = "good evening";
-                }
-            }
-
-            window.onload = updateHeader;
-        </script>
     </body>
 </html>
