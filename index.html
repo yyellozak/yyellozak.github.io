@@ -7,41 +7,15 @@
     </head>
     <body>
         <div class="content">
-            <h1 id="greetings">good morning</h1>
-            <p>hello i'm yello</p>
-            <h2>
-                latest from <a href="/b">the blog</a>
-            </h2>
-            <div class="posts">
-                <ul>
-                    <li>
-                        <p class="sub">8 Dec 24</p>
-                        <h2><a href="/b/posts/another-site-update.html">Another site update</a></h2>
-                        <p>
-                            Hi. I did another site update. ...
-                        </p>
-                    </li>
-                    <li>
-                        <p class="sub">1 Sep 24</p>
-                        <h2><a href="/b/posts/1-sep-24.html">1 Sep 2024</a></h2>
-                        <p>
-                            merry Christmas (its Christmas season in the
-                            Philippines lol). also i just updated the
-                            website to fix some stuff and add some stuff
-                        </p>
-                    </li>
-                    <li>
-                        <p class="sub">31 Aug 24</p>
-                        <h2><a href="/b/posts/31-aug-24.html">31 Aug 2024</a></h2>
-                        <p>
-                            new website design ig. this website is quite
-                            unfinished
-                        </p>
-                    </li>
-                </ul>
+            <h1 id="greetings"></h1>
+            <p>i'm yyello !</p>
+            <div class="site-links">
+                <a href="">blog</a>
+                <a href="">proj</a>
+                <a href="">faith</a>
+                <a href="">social</a>
             </div>
         </div>
-        <script defer src="/script.js"></script>
         <script>
             function updateHeader() {
                 const now = new Date();
@@ -51,11 +25,11 @@
                 if (hours < 4) {
                     header.textContent = "go to sleep";
                 } else if (hours < 12) {
-                    header.textContent = "good morning";
+                    header.textContent = "gud mornin ^v^";
                 } else if (hours < 18) {
-                    header.textContent = "good afternoon";
+                    header.textContent = "gud afternoon ^v^";
                 } else {
-                    header.textContent = "good evening";
+                    header.textContent = "gud evenin ^v^";
                 }
             }
 
